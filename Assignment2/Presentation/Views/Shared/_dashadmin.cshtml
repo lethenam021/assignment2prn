@@ -1,0 +1,281 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin – Quản lý tài khoản</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --sidebar: #f3f4f6;
+            --text: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --accent: #0ea5e9;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter,system-ui,sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            height: 100vh;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 250px;
+            background: var(--sidebar);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 18px 14px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            margin-bottom: 16px
+        }
+
+        .logo {
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-weight: 700
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 6px 8px;
+            margin-bottom: 12px
+        }
+
+            .search input {
+                background: transparent;
+                border: none;
+                outline: none;
+                color: var(--text);
+                width: 100%
+            }
+
+                .search input::placeholder {
+                    color: var(--muted)
+                }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 2px
+        }
+
+            .nav a {
+                padding: 8px 10px;
+                color: var(--text);
+                text-decoration: none;
+                border-left: 3px solid transparent;
+            }
+
+                .nav a:hover {
+                    background: rgba(0,0,0,0.04)
+                }
+
+                .nav a.active {
+                    border-color: var(--accent);
+                    font-weight: 600
+                }
+
+        /* ===== MAIN ===== */
+        main {
+            flex: 1;
+            padding: 24px;
+            overflow: auto
+        }
+
+        h1 {
+            margin: 0 0 8px 0;
+            font-size: 1.3rem
+        }
+
+        .sub {
+            color: var(--muted);
+            margin-bottom: 20px
+        }
+
+        /* Tabs underline */
+        .tabs {
+            display: flex;
+            gap: 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            font: inherit;
+            padding: 10px 0;
+            cursor: pointer
+        }
+
+            .tab-btn.active {
+                color: var(--text);
+                border-bottom: 2px solid var(--accent);
+                margin-bottom: -1px
+            }
+
+        /* Content */
+        section {
+            padding: 10px 0
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px
+        }
+
+        label {
+            display: block;
+            color: var(--muted);
+            font-size: .9rem;
+            margin-bottom: 4px
+        }
+
+        input, select {
+            padding: 8px 10px;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--text);
+            width: 100%
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--text);
+            cursor: pointer
+        }
+
+            .btn.primary {
+                background: var(--accent);
+                border: none;
+                color: #fff
+            }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px
+        }
+
+            .table th, .table td {
+                padding: 8px 10px;
+                text-align: left;
+                border-bottom: 1px solid var(--border)
+            }
+
+            .table th {
+                color: var(--muted);
+                font-weight: 600
+            }
+
+        .note {
+            color: var(--muted);
+            font-size: .9rem
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand"><div class="logo">AC</div>Admin Console</div>
+        <div class="search">🔍<input placeholder="Tìm menu..." /></div>
+        <nav class="nav">
+            <a href="#" class="active">👥 Quản lý tài khoản</a>
+            <a href="#">📰 Tin bài</a>
+            <a href="#">⚙️ Cài đặt</a>
+            <a href="#">📁 Nhật ký hệ thống</a>
+        </nav>
+    </aside>
+
+    <main>
+        <h1>Quản lý tài khoản</h1>
+        <div class="sub">Một trang xử lý toàn bộ: CRUD, tìm/lọc, đổi mật khẩu, xoá theo quy tắc.</div>
+
+        <!-- Tabs -->
+        <div class="tabs" id="tabs">
+            <button class="tab-btn active" data-tab="list">Danh sách</button>
+            <button class="tab-btn" data-tab="create">Tạo mới</button>
+            <button class="tab-btn" data-tab="password">Đổi mật khẩu</button>
+        </div>
+
+        <!-- LIST -->
+        <section class="tab" id="tab-list">
+            <div class="row">
+                <div><label>Tìm kiếm</label><input placeholder="Tên / Email..." /></div>
+                <div><label>Vai trò</label><select><option>Tất cả</option><option>Staff</option><option>Lecturer</option></select></div>
+                <div style="align-self:end"><button class="btn">Lọc</button></div>
+            </div>
+            <table class="table">
+                <thead><tr><th>Tên</th><th>Email</th><th>Vai trò</th><th>Trạng thái</th><th></th></tr></thead>
+                <tbody>
+                    <tr><td>Nguyễn Văn A</td><td>a@uni.edu</td><td>Staff</td><td>Active</td><td><button class="btn">Sửa</button></td></tr>
+                    <tr><td>Trần Thị B</td><td>b@uni.edu</td><td>Lecturer</td><td>Active</td><td><button class="btn">Sửa</button></td></tr>
+                </tbody>
+            </table>
+            <p class="note">* Không thể xoá tài khoản nếu đã có bài viết trong <code>NewsArticle.CreatedByID</code>.</p>
+        </section>
+
+        <!-- CREATE -->
+        <section class="tab" id="tab-create" hidden>
+            <div class="row">
+                <div><label>Tên</label><input /></div>
+                <div><label>Email</label><input /></div>
+                <div><label>Vai trò</label><select><option>Staff</option><option>Lecturer</option></select></div>
+            </div>
+            <div class="row"><div><label>Mật khẩu</label><input type="password" /></div></div>
+            <button class="btn primary">Tạo tài khoản</button>
+        </section>
+
+        <!-- PASSWORD -->
+        <section class="tab" id="tab-password" hidden>
+            <div class="row">
+                <div><label>Email</label><input /></div>
+                <div><label>Mật khẩu hiện tại</label><input type="password" /></div>
+                <div><label>Mật khẩu mới</label><input type="password" /></div>
+            </div>
+            <button class="btn primary">Cập nhật</button>
+        </section>
+    </main>
+
+    <script>
+        const tabs=document.querySelectorAll('.tab-btn');
+        const sections=document.querySelectorAll('.tab');
+        tabs.forEach(btn=>{
+          btn.onclick=()=>{
+            tabs.forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
+            const id='tab-'+btn.dataset.tab;
+            sections.forEach(s=>s.hidden=s.id!==id);
+          };
+        });
+    </script>
+</body>
+</html>

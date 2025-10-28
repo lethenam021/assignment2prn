@@ -1,0 +1,14 @@
+C:\VisualStudio\Assignment2\DataAccess\bin\Debug\net9.0\DataAccess.deps.json
+C:\VisualStudio\Assignment2\DataAccess\bin\Debug\net9.0\DataAccess.dll
+C:\VisualStudio\Assignment2\DataAccess\bin\Debug\net9.0\DataAccess.pdb
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\DataAccess.AssemblyInfoInputs.cache
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\DataAccess.AssemblyInfo.cs
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\DataAccess.dll
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\refint\DataAccess.dll
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\DataAccess.pdb
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\ref\DataAccess.dll
+C:\VisualStudio\Assignment2\DataAccess\bin\Debug\net9.0\DataAccess.runtimeconfig.json
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\DataAccess.csproj.AssemblyReference.cache
+C:\VisualStudio\Assignment2\DataAccess\obj\Debug\net9.0\DataAccess.genruntimeconfig.cache

@@ -1,0 +1,250 @@
+﻿:root {
+    --bg: #ffffff;
+    --sidebar: #f3f4f6;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #0ea5e9;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter,system-ui,sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh
+}
+.sidebar {
+    width: 240px;
+    flex-shrink: 0; /* không cho sidebar co lại */
+}
+
+main {
+    flex: 1; /* phần còn lại của màn hình */
+    padding: 24px;
+    background: #f9fafb;
+}
+
+.sidebar {
+    width: 260px;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    padding: 18px 14px ;
+    flex-direction: row; /* đảm bảo menu ở bên trái, nội dung bên phải */
+    min-height: 100vh; /* chiếm toàn bộ chiều cao màn hình */
+    margin: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 14px
+}
+
+.logo {
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 6px 8px;
+    margin-bottom: 12px
+}
+
+    .search input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--text);
+        width: 100%
+    }
+
+.nav {
+    display: flex;
+    flex-direction: column
+}
+
+    .nav a {
+        padding: 8px 10px;
+        color: var(--text);
+        text-decoration: none;
+        border-left: 3px solid transparent
+    }
+
+        .nav a:hover {
+            background: rgba(0,0,0,.05)
+        }
+
+        .nav a.active {
+            border-left-color: var(--accent);
+            font-weight: 600
+        }
+
+.badge {
+    font-size: .85rem;
+    color: var(--muted)
+}
+
+#app {
+    flex: 1;
+    padding: 22px;
+    overflow: auto
+}
+
+h1 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem
+}
+
+.sub {
+    color: var(--muted);
+    margin-bottom: 18px
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px
+}
+
+label {
+    display: block;
+    color: var(--muted);
+    font-size: .9rem;
+    margin-bottom: 4px
+}
+
+input, select, textarea {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    width: 100%
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical
+}
+
+.btn {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    cursor: pointer
+}
+
+    .btn.primary {
+        background: var(--accent);
+        border: none;
+        color: #fff
+    }
+
+    .btn.danger {
+        border-color: #ef4444;
+        color: #ef4444
+    }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px
+}
+
+    .table th, .table td {
+        padding: 8px 10px;
+        text-align: left;
+        border-bottom: 1px solid var(--border)
+    }
+
+    .table th {
+        color: var(--muted);
+        font-weight: 600
+    }
+
+.note {
+    color: var(--muted);
+    font-size: .9rem
+}
+
+.hr {
+    height: 1px;
+    background: var(--border);
+    margin: 12px 0
+}
+
+/* Bắt buộc chiều cao đầy đủ */
+html, body {
+    height: 100%;
+}
+
+/* Không dựa vào flex của body nữa để tránh bị CSS khác ghi đè */
+body {
+    background: #f6f8fa;
+}
+
+/* GHIM SIDEBAR BÊN TRÁI */
+.sidebar {
+    position: fixed; /* quan trọng */
+    top: 0;
+    left: 0;
+    width: 220px; /* khớp với thiết kế của bạn */
+    height: 100vh; /* kéo full chiều cao */
+    overflow-y: auto; /* scroll nếu menu dài */
+    background: #1e293b; /* màu như trước */
+    color: #fff;
+    padding: 24px 0;
+    z-index: 1000;
+}
+
+/* ĐẨY NỘI DUNG CHÍNH SANG PHẢI */
+main {
+    margin-left: 220px; /* đúng bằng width của .sidebar */
+    padding: 32px;
+    max-width: none; /* tránh bị .container giới hạn chiều rộng */
+}
+
+/* Nếu layout của bạn dùng .container (Bootstrap, v.v.), vô hiệu hoá giới hạn */
+.container {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Responsive: khi màn hình hẹp thì ẩn sidebar, nội dung full-width */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform .2s;
+    }
+
+    body.nav-open .sidebar {
+        transform: none;
+    }
+    /* nếu sau này muốn mở bằng nút */
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+

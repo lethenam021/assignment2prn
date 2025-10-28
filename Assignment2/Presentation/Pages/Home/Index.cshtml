@@ -1,0 +1,630 @@
+﻿@page "/"
+@model Presentation.Pages.Home.IndexModel
+@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery Xsrf
+@{
+    var tokens = Xsrf.GetAndStoreTokens(HttpContext);
+}
+<meta name="request-verification-token" content="@tokens.RequestToken" />
+
+@{
+}
+@{
+    Layout = "~/Views/Shared/_navbar.cshtml";
+    ViewData["Title"] = "Trang chủ";
+}
+
+<style>
+
+
+    .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: flex-end;
+        padding: 20px;
+        background: #fafafa;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+        .toolbar input[type="text"],
+        .toolbar input[type="date"],
+        .toolbar select {
+            border: none;
+            border-bottom: 2px solid #ccc;
+            background: transparent;
+            padding: 6px 0;
+            font-size: 14px;
+            min-width: 160px;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+            .toolbar input:focus,
+            .toolbar select:focus {
+                border-bottom-color: #0078d7;
+                outline: none;
+                background-color: #f0f8ff;
+            }
+
+    .btn.reset {
+        background: transparent;
+        color: #888;
+        border: none;
+        font-size: 22px;
+        line-height: 1;
+        padding: 4px 10px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: color 0.2s ease, background 0.2s ease;
+    }
+
+        .btn.reset:hover {
+            color: #000;
+            background: #f0f0f0;
+        }
+
+    .btn.primary {
+        background: #0078d7;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+        .btn.primary:hover {
+            background: #005fa3;
+        }
+</style>
+
+<main class="container" role="main">
+    <form method="get" asp-action="Filter" asp-controller="Home" class="toolbar">
+        <input type="text" name="Keyword" placeholder="Tìm theo tiêu đề..." />
+        <select name="Category">
+            <option value="">Nguồn</option>
+            <option value="Internet">Internet</option>
+            <option value="N/A">N/A</option>
+
+        </select>
+        <select name="DateField">
+            <option value="created">Ngày tạo</option>
+            <option value="verified">Ngày xác minh</option>
+        </select>
+        <input name="From" type="date" />
+        <input name="To" type="date" />
+        <select name="Sort">
+            <option value="created_desc">Mới nhất</option>
+            <option value="created_asc">Cũ nhất</option>
+        </select>
+        <select id="categorySelect" name="Category">
+            <option value="">-- Select Category --</option>
+        </select>
+
+
+        <button type="submit" class="btn primary">Áp dụng</button>
+        <button type="reset" class="btn reset" title="Xóa bộ lọc">×</button>
+
+    </form>
+
+    <!-- KPIs -->
+    <section class="kpis" aria-label="Số liệu nhanh">
+        <div class="kpi">
+            <h4>Tổng Bài viết hiển thị</h4>
+            <div class="v">@Model.Articles.Count()</div>
+        </div>
+        <div class="kpi">
+            <h4>Bài viết đang hoạt động</h4>
+            <div class="v">@Model.Articles.Count(x => x.NewsStatus == true)</div>
+        </div>
+        <div class="kpi">
+            <h4>Bài viết dừng hoạt động</h4>
+            <div class="v">@Model.Articles.Count(x => x.NewsStatus == false)</div>
+        </div>
+    </section><br />
+
+    <style>
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .kpi {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+            .kpi:hover {
+                transform: translateY(-3px);
+            }
+
+            .kpi h4 {
+                margin-bottom: 0.5rem;
+                color: #333;
+                font-weight: 600;
+            }
+
+            .kpi .v {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #007bff;
+            }
+    </style>
+    <section id="results" aria-live="polite">
+        @if (Model.Articles?.Any() == true)
+        {
+            <div class="row">
+                @foreach (var n in Model.Articles)
+                {
+                    var updated = n.ModifiedDate?.ToString("dd/MM/yyyy HH:mm") ?? "-";
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">@n.NewsTitle</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">@n.NewsSource</h6>
+                                <p class="card-text">
+                                    @(!string.IsNullOrWhiteSpace(n.Headline)
+                                                                ? n.Headline
+                                                                : n.NewsContent?.Length > 140
+                                                                ? n.NewsContent.Substring(0, 140) + "..."
+                                                                : n.NewsContent)
+                        </p>
+                        <p class="mb-1"><strong>Trạng thái:</strong> @n.NewsStatus</p>
+                        <p class="mb-1"><strong>Tạo:</strong> @n.CreatedDate</p>
+                        <p class="mb-2"><strong>Cập nhật:</strong> @updated</p>
+                    </div>
+
+                            <div class="card-footer">
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="collapse"
+                                        data-bs-target="#comments-@n.NewsArticleId" aria-expanded="false">
+                                    💬 Bình luận (@(n.Comments?.Count ?? 0))
+                                </button>
+                            </div>
+
+                            <div class="collapse" id="comments-@n.NewsArticleId">
+                                <div class="p-3 border-top">
+                                    <!-- Thêm bình luận -->
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" id="new-cmt-@n.NewsArticleId" placeholder="Nhập bình luận..." />
+                                        <button class="btn btn-success"
+                                                onclick="addComment('@n.NewsArticleId', this)">
+                                            Gửi
+                                        </button>
+
+
+                                    </div>
+
+                                    <!-- Danh sách bình luận -->
+                            @if (n.Comments?.Any() == true)
+                                    {
+                                        <ul class="list-group">
+                                            @foreach (var c in n.Comments)
+                                            {
+                                                <li class="list-group-item" id="cmt-item-@c.Id">
+                                                    <div class="d-flex justify-content-between align-items-start">
+                                                        <div class="me-2 flex-grow-1">
+                                                            <div class="small text-muted">
+                                                                <strong>@c.AuthorName</strong> • @c.CreatedAt.ToString("dd/MM/yyyy HH:mm")
+                                                            </div>
+                                                            <div id="cmt-text-@c.Id">@c.Content</div>
+
+                                                            <!-- form sửa ẩn -->
+                                                            <div class="mt-2 d-none" id="cmt-edit-wrap-@c.Id">
+                                                                <textarea class="form-control mb-2" id="cmt-edit-@c.Id">@c.Content</textarea>
+                                                                <div class="d-flex gap-2">
+                                                                    <button class="btn btn-sm btn-primary"
+                                                                            onclick="saveComment(@n.NewsArticleId, @c.Id)">
+                                                                        Lưu
+                                                                    </button>
+                                                                    <button class="btn btn-sm btn-outline-secondary"
+                                                                            onclick="cancelEdit(@c.Id)">
+                                                                        Hủy
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="btn-group btn-group-sm">
+                                                            <button class="btn btn-warning"
+                                                                    onclick="startEdit(@c.Id)">
+                                                                Sửa
+                                                            </button>
+                                                            <button class="btn btn-danger"
+                                                                    onclick="deleteComment(@n.NewsArticleId, @c.Id)">
+                                                                Xóa
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <div class="text-muted fst-italic">Chưa có bình luận.</div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info text-center">Không có dữ liệu</div>
+        }
+    </section>
+
+    @* Nếu bạn dùng AntiForgery *@
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="empty">Không tìm thấy bài viết phù hợp. Hãy đổi bộ lọc hoặc khoảng ngày.</div>
+
+    <!-- Pagination -->
+    <nav class="pagination" aria-label="Phân trang">
+        <button class="page-btn" title="Trang trước">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+        </button>
+        <button class="page-btn" title="Trang sau">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
+        </button>
+    </nav>
+</main>
+
+<!-- Static preview dialog -->
+<dialog id="preview">
+    <div class="dlg-head">
+        <strong>Xem nhanh</strong>
+        <button class="close-x" aria-label="Đóng">✕</button>
+    </div>
+    <div class="dlg-body">
+        <div style="color:var(--muted); font-size:13px; margin-bottom:8px">Nguồn: VnExpress — 01/10/2024</div>
+        <div style="line-height:1.6">
+            Bài viết mô tả cách trí tuệ nhân tạo đang tác động mạnh mẽ đến mọi lĩnh vực đời sống.
+        </div>
+    </div>
+</dialog>
+<!-- Toast container -->
+<!-- Toast container -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index:1080">
+    <div id="liveToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="toastBody">Đang xử lý…</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap CSS/JS nếu chưa có -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SignalR client -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+
+<script>
+    (() => {
+      const CLIST_URL = "?handler=CList";
+      let latestCList = [];
+
+      async function getJSON(url) {
+        const sep = url.includes("?") ? "&" : "?";
+        const bust = `${sep}_=${Date.now()}`;
+        const r = await fetch(url + bust, {
+          headers: { "Accept": "application/json" },
+          cache: "no-store",
+          credentials: "same-origin"
+        });
+        if (!r.ok) throw new Error(`HTTP ${r.status} ${await r.text()}`);
+        return r.json();
+      }
+
+      function renderSelect(list) {
+        const sel = document.getElementById("categorySelect");
+        if (!sel) return false;
+        sel.innerHTML =
+          `<option value="">-- Select Category --</option>` +
+          (Array.isArray(list)
+            ? list.map(a => `<option value="${a.id}">${a.categoryname}</option>`).join("")
+            : "");
+        sel.dispatchEvent(new Event("change"));
+        return true;
+      }
+
+      function waitAndRender() {
+        if (renderSelect(latestCList)) return;
+        const obs = new MutationObserver(() => {
+          if (renderSelect(latestCList)) obs.disconnect();
+        });
+        obs.observe(document.body, { childList: true, subtree: true });
+      }
+
+      async function refreshAll() {
+        try {
+          const data = await getJSON(CLIST_URL);
+          latestCList = Array.isArray(data) ? data : [];
+          waitAndRender();
+        } catch (e) {
+          console.error("refreshAll fail:", e);
+          setTimeout(refreshAll, 1000);
+        }
+      }
+
+      function setupHub() {
+        if (!window.hub) {
+          window.hub = new signalR.HubConnectionBuilder()
+            .withUrl("/hubs/app")
+            .withAutomaticReconnect()
+            .build();
+
+          const onUpdate = () => refreshAll();
+          hub.on("notice", onUpdate);
+          hub.on("category:updated", onUpdate);
+        }
+        if (hub.state !== "Connected") {
+          hub.start().catch(err => console.error("Hub connect failed:", err));
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        setupHub();
+        refreshAll();
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) refreshAll();
+      });
+    })();
+</script>
+
+<script>
+    (() => {
+      const ADD_URL = "?handler=AddComment";
+      const UPDATE_URL = "?handler=UpdateComment";
+      const DELETE_URL = "?handler=DeleteComment";
+      const GET_URL = "?handler=Comments";
+
+      // ===== Utils =====
+      function getToken() {
+        // Ưu tiên meta (layout Option A), fallback sang input hidden
+        const meta = document.querySelector('meta[name="request-verification-token"]')?.content;
+        if (meta) return meta;
+        const input = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+        return input || "";
+      }
+
+      async function postJson(url, payload) {
+        const r = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Accept": "application/json",
+            "RequestVerificationToken": getToken()
+          },
+          credentials: "same-origin",   // gửi kèm cookie anti-forgery
+          body: JSON.stringify(payload),
+          cache: "no-store"
+        });
+        if (!r.ok) throw new Error(`HTTP ${r.status} ${await r.text()}`);
+        return r.json();
+      }
+
+      async function getJson(url) {
+        const sep = url.includes("?") ? "&" : "?";
+        const r = await fetch(url + `${sep}_=${Date.now()}`, {
+          headers: { Accept: "application/json" },
+          cache: "no-store",
+          credentials: "same-origin"
+        });
+        if (!r.ok) throw new Error(`HTTP ${r.status} ${await r.text()}`);
+        return r.json();
+      }
+
+      // Toast helper (Bootstrap 5)
+      function showToast(message) {
+        const body = document.getElementById("toastBody");
+        const el = document.getElementById("liveToast");
+        if (!body || !el) return;
+        body.textContent = message;
+        const t = bootstrap.Toast.getOrCreateInstance(el, { delay: 2500 });
+        t.show();
+      }
+
+      // ====== DOM helpers for comments block ======
+      function getCommentsRoot(articleId) {
+        return document.querySelector(`#comments-${articleId} .p-3`);
+      }
+      function ensureList(articleId) {
+        const root = getCommentsRoot(articleId);
+        if (!root) return null;
+        const placeholder = root.querySelector(".cmt-empty");
+        if (placeholder) placeholder.remove();
+        let ul = root.querySelector(`#cmt-list-${articleId}`);
+        if (!ul) {
+          ul = document.createElement("ul");
+          ul.className = "list-group";
+          ul.id = `cmt-list-${articleId}`;
+          root.appendChild(ul);
+        }
+        return ul;
+      }
+      function setEmpty(articleId) {
+        const root = getCommentsRoot(articleId);
+        if (!root) return;
+        const ul = root.querySelector(`#cmt-list-${articleId}`);
+        if (ul) ul.remove();
+        const div = document.createElement("div");
+        div.className = "text-muted fst-italic cmt-empty";
+        div.textContent = "Chưa có bình luận.";
+        root.appendChild(div);
+      }
+      function updateCountBadge(articleId, count) {
+        const btn = document.querySelector(`button[data-bs-target="#comments-${articleId}"]`);
+        if (!btn) return;
+        const txt = btn.textContent || "";
+        btn.textContent = txt.replace(/(.*\()\d+(.*)/, `$1${count}$2`) || `💬 Bình luận (${count})`;
+      }
+
+      function commentItemTemplate(articleId, c) {
+        return `
+          <li class="list-group-item" id="cmt-item-${c.id}">
+            <div class="d-flex justify-content-between align-items-start">
+              <div class="me-2 flex-grow-1">
+                <div class="small text-muted">
+                  <strong>${escapeHtml(c.authorName || "Ẩn danh")}</strong>
+                  • ${formatDate(c.createdAt)}
+                </div>
+                <div id="cmt-text-${c.id}">${escapeHtml(c.content)}</div>
+
+                <div class="mt-2 d-none" id="cmt-edit-wrap-${c.id}">
+                  <textarea class="form-control mb-2" id="cmt-edit-${c.id}">${escapeHtml(c.content)}</textarea>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-primary" onclick="saveComment(${articleId}, ${c.id})">Lưu</button>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="cancelEdit(${c.id})">Hủy</button>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-group btn-group-sm">
+                <button class="btn btn-warning" onclick="startEdit(${c.id})">Sửa</button>
+                <button class="btn btn-danger" onclick="deleteComment(${articleId}, ${c.id})">Xóa</button>
+              </div>
+            </div>
+          </li>`;
+      }
+
+      function escapeHtml(s) {
+        return (s ?? "").toString()
+          .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+      function formatDate(dt) {
+        try {
+          const d = new Date(dt);
+          const p = (n) => n.toString().padStart(2, "0");
+          return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} ${p(d.getHours())}:${p(d.getMinutes())}`;
+        } catch { return dt; }
+      }
+
+      async function renderComments(articleId) {
+        const res = await getJson(`${GET_URL}&articleId=${encodeURIComponent(articleId)}`);
+        const list = (res && res.success && Array.isArray(res.data)) ? res.data : [];
+        if (!list.length) {
+          setEmpty(articleId);
+          updateCountBadge(articleId, 0);
+          return;
+        }
+        const ul = ensureList(articleId);
+        if (!ul) return;
+        ul.innerHTML = list.map(c => commentItemTemplate(articleId, c)).join("");
+        updateCountBadge(articleId, list.length);
+      }
+
+      // ====== CRUD (global) ======
+      window.addComment = async function(articleId, btn) {
+        try {
+          const id = String(articleId);
+          const group = btn?.closest(".input-group");
+          const ip = group ? group.querySelector("input") : document.getElementById(`new-cmt-${id}`);
+
+          const content = (ip?.value ?? "").trim();
+          if (!content) throw new Error("Nội dung trống.");
+
+          const res = await postJson(ADD_URL, { articleId: id, content, author: "" });
+          if (!res.success) throw new Error(res.message || "Thêm bình luận thất bại.");
+
+          ip.value = "";
+          showToast("Đã thêm bình luận!");
+          await renderComments(id); // cũng sẽ được refresh qua SignalR
+        } catch (e) {
+          console.error(e);
+          showToast(e.message || "Lỗi khi thêm bình luận.");
+        }
+      };
+
+      window.startEdit = function(commentId) {
+        const wrap = document.getElementById(`cmt-edit-wrap-${commentId}`);
+        const text = document.getElementById(`cmt-text-${commentId}`);
+        if (wrap && text) { wrap.classList.remove("d-none"); text.classList.add("d-none"); }
+      };
+
+      window.cancelEdit = function(commentId) {
+        const wrap = document.getElementById(`cmt-edit-wrap-${commentId}`);
+        const text = document.getElementById(`cmt-text-${commentId}`);
+        if (wrap && text) { wrap.classList.add("d-none"); text.classList.remove("d-none"); }
+      };
+
+      window.saveComment = async function(articleId, commentId) {
+        try {
+          const ta = document.getElementById(`cmt-edit-${commentId}`);
+          const content = (ta?.value ?? "").trim();
+          if (!content) { showToast("Nội dung trống."); return; }
+
+          const res = await postJson(UPDATE_URL, { articleId: String(articleId), commentId, content });
+          if (!res.success) throw new Error("Cập nhật bình luận thất bại.");
+          showToast("Đã cập nhật bình luận!");
+          await renderComments(String(articleId));
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi khi cập nhật bình luận.");
+        }
+      };
+
+      window.deleteComment = async function(articleId, commentId) {
+        try {
+          if (!confirm("Xóa bình luận này?")) return;
+          const res = await postJson(DELETE_URL, { articleId: String(articleId), commentId });
+          if (!res.success) throw new Error("Xóa bình luận thất bại.");
+          showToast("Đã xóa bình luận.");
+          await renderComments(String(articleId));
+        } catch (e) {
+          console.error(e);
+          showToast("Lỗi khi xóa bình luận.");
+        }
+      };
+
+      // ====== SignalR for comments ======
+      function attachCommentHubHandlers() {
+        if (!window.hub) return;
+        if (window.__cmtHandlersBound) return;
+        window.__cmtHandlersBound = true;
+
+        hub.on("ReceiveCommentAdded", async (articleId) => {
+          showToast(`Bài ${articleId}: Có bình luận mới.`);
+          await renderComments(articleId);
+        });
+        hub.on("ReceiveCommentUpdated", async (articleId) => {
+          showToast(`Bài ${articleId}: Bình luận đã được cập nhật.`);
+          await renderComments(articleId);
+        });
+        hub.on("ReceiveCommentDeleted", async (articleId) => {
+          showToast(`Bài ${articleId}: Bình luận đã bị xóa.`);
+          await renderComments(articleId);
+        });
+
+        // nếu hub chưa connect, thử start
+        if (hub.state !== "Connected") {
+          hub.start().catch(err => console.error("Hub connect failed:", err));
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        attachCommentHubHandlers();
+      });
+    })();
+</script>
+

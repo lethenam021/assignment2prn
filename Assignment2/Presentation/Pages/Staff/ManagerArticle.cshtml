@@ -1,0 +1,306 @@
+﻿@page "/article"
+@model Presentation.Pages.Staff.ManagerArticleModel
+
+@{
+    Layout = "~/Views/Shared/_navbar.cshtml";
+    ViewData["Title"] = "Quản lý bài viết";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        alert(@Html.Raw(System.Text.Json.JsonSerializer.Serialize(TempData["SuccessMessage"])));
+    </script>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        alert(@Html.Raw(System.Text.Json.JsonSerializer.Serialize(TempData["ErrorMessage"])));
+    </script>
+}
+@section Head {
+    <style>
+        /* --- Reuse với Category --- */
+        .form-underline {
+            border: none !important;
+            border-bottom: 1.5px solid #e2e8f0 !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+            box-shadow: none !important
+        }
+
+            .form-underline:focus {
+                border-bottom-color: #0d6efd !important;
+                box-shadow: none !important
+            }
+
+        .filter-card {
+            border: 0 !important;
+            box-shadow: 0 1px 0 #e9ecef !important;
+            border-radius: 12px
+        }
+
+        .btn-icon {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px
+        }
+
+            .btn-icon i {
+                font-size: 16px
+            }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    </style>
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <button type="button"
+            class="btn btn-primary btn-sm px-3 py-2 rounded-2"
+            data-bs-toggle="modal"
+            data-bs-target="#addArticleModal">
+        <i class="bi bi-plus-lg me-1"></i> Tạo
+    </button>
+
+</div>
+
+<!-- Filter: chỉ gạch dưới -->
+<form class="card p-3 shadow-sm mb-4 filter-card" onsubmit="event.preventDefault(); searchArticles();">
+    <div class="row g-3 align-items-end">
+        <div class="col-md-4">
+            <label class="form-label fw-medium">Từ khoá</label>
+            <input id="qTitle" class="form-control form-underline" placeholder="Tiêu đề, tác giả...">
+        </div>
+        <div class="col-md-3">
+            <label class="form-label fw-medium">Chuyên mục</label>
+            <input id="qCategory" class="form-control form-underline" placeholder="Category">
+        </div>
+        <div class="col-md-3">
+            <label class="form-label fw-medium">Trạng thái</label>
+            <select id="qStatus" class="form-select form-underline">
+                <option value="">Tất cả</option>
+                <option>Published</option>
+                <option>Draft</option>
+                <option>Archived</option>
+            </select>
+        </div>
+        <div class="col-md-2 d-flex">
+            <button type="submit" class="btn btn-outline-primary btn-sm w-100">
+                <i class="bi bi-search me-1"></i> Tìm kiếm
+            </button>
+        </div>
+    </div>
+    <div class="row g-3 mt-2">
+        <div class="col-md-3">
+            <label class="form-label fw-medium">Từ ngày</label>
+            <input id="qStart" type="date" class="form-control form-underline">
+        </div>
+        <div class="col-md-3">
+            <label class="form-label fw-medium">Đến ngày</label>
+            <input id="qEnd" type="date" class="form-control form-underline">
+        </div>
+
+    </div>
+</form>
+
+<!-- Bảng -->
+<div class="card shadow-sm">
+    <div class="table-responsive">
+        <table class="table align-middle table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th style="width:48px"><input type="checkbox" onclick="toggleAll(this)"></th>
+                    <th style="width:80px">ID</th>
+                    <th>Title</th>
+                    <th style="width:140px">Author</th>
+                    <th style="width:160px">Category</th>
+                    <th style="width:120px">Status</th>
+                    <th class="text-center" style="width:120px">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="rows">
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal: Add Article -->
+<div class="modal fade" id="addArticleModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <form id="addArticleForm" onsubmit="saveNewArticle(event)">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-semibold">Thêm bài viết</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-8">
+                            <label class="form-label">Tiêu đề <span class="text-danger">*</span></label>
+                            <input id="naTitle" name="Title" class="form-control form-underline" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Tác giả</label>
+                            <input id="naAuthor" name="Author" class="form-control form-underline" placeholder="Tên tác giả">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Chuyên mục <span class="text-danger">*</span></label>
+                            <select id="naCategory" name="Category" class="form-select form-underline" required>
+                                <option value="">-- Chọn --</option>
+                                <option>Announcements</option>
+                                <option>Research</option>
+                                <option>Events</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Trạng thái</label>
+                            <select id="naStatus" name="Status" class="form-select form-underline">
+                                <option>Draft</option>
+                                <option>Published</option>
+                                <option>Archived</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Nội dung</label>
+                            <textarea id="naContent" name="Content" rows="5" class="form-control form-underline" placeholder="Nội dung bài viết..."></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Tags (giữ Ctrl/Cmd để chọn nhiều)</label>
+                            <select id="naTags" name="Tags" class="form-select form-underline" multiple size="4">
+                                <option value="1">AI</option>
+                                <option value="2">Policy</option>
+                                <option value="3">Campus</option>
+                                <option value="4">Event</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-light border px-3 py-2" data-bs-dismiss="modal">Huỷ</button>
+                    <button type="submit" class="btn btn-primary px-3 py-2">Lưu</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    (() => {
+      // ====== CONST: endpoints ======
+      const BASE = "/article";
+      const LIST_URL   = `${BASE}?handler=List`;
+      const CREATE_URL = `${BASE}?handler=CreateCategory`;
+      const DELETE_URL = `${BASE}?handler=Delete`;
+
+      // ====== CSRF token (Razor) ======
+      const tokenEl = document.querySelector('input[name="__RequestVerificationToken"]');
+      const CSRF = tokenEl ? tokenEl.value : "";
+
+      // ====== Toast (Bootstrap 5) ======
+      function showToast(message, type = "info", delay = 3500) {
+        const id = "t" + Date.now();
+        const bg = {
+          info:"text-bg-info", success:"text-bg-success", warning:"text-bg-warning",
+          danger:"text-bg-danger", primary:"text-bg-primary", secondary:"text-bg-secondary"
+        }[type] || "text-bg-info";
+        const html = `
+        <div id="${id}" class="toast align-items-center ${bg} border-0 mb-2" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">${message}</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>`;
+        const wrap = document.getElementById("toasts");
+        if (wrap) {
+          wrap.insertAdjacentHTML("beforeend", html);
+          const el = document.getElementById(id);
+          new bootstrap.Toast(el, { delay, autohide: true }).show();
+        }
+      }
+
+      // ====== HTTP helpers (no-cache) ======
+      async function getJSON(url) {
+        const sep = url.includes("?") ? "&" : "?";
+        const bust = `${sep}_=${Date.now()}`;
+        const r = await fetch(url + bust, {
+          headers: { "Accept":"application/json" },
+          cache: "no-store"
+        });
+        if (!r.ok) {
+          console.error("GET", url, r.status, await r.text());
+          throw new Error("GET fail");
+        }
+        return r.json();
+      }
+
+      async function postJSON(url, data) {
+        const r = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type":"application/json",
+            "RequestVerificationToken": CSRF
+          },
+          body: JSON.stringify(data)
+        });
+        if (!r.ok) {
+          console.error("POST", url, r.status, await r.text());
+          throw new Error("POST fail");
+        }
+        return r.json();
+      }
+
+      // ====== Render list ======
+      function renderRows(list){
+        const tbody = document.getElementById("rows");
+        if (!tbody) return;
+
+        if (!list || list.length === 0){
+          tbody.innerHTML = `
+    <tr><td colspan="7" class="text-center text-muted">No category found.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = list.map(a => `
+    <tr>
+      <td>${a.id ?? ""}</td>
+      <td>${a.title ?? ""}</td>
+      <td>${a.content ?? ""}</td>
+      <td>${a.newsource ?? ""}</td>   <!-- đổi từ a.source -> a.newsource -->
+      <td>${a.headline ?? ""}</td>
+      <td>${a.created ?? ""}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-primary me-1" onclick='openEdit(${JSON.stringify(a)})'>Edit</button>
+        <button class="btn btn-sm btn-outline-danger" onclick='delAcc(${a.id})'>Delete</button>
+      </td>
+    </tr>`).join("");
+      }
+
+      // ====== Refresh (list) ======
+      async function refreshAll() {
+        const data = await getJSON(LIST_URL);
+        renderRows(data);
+      }
+      // alias cho code cũ
+      async function refresh(){ await refreshAll(); }
+
+      // >>> GỌI NGAY KHI LOAD <<<
+      document.addEventListener('DOMContentLoaded', refreshAll);
+    })();  // <-- đóng IIFE
+</script>

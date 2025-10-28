@@ -1,0 +1,617 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\VisualStudio\\Assignment2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\staff\\managerarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\staff\\managerarticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\staff\\managercategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\staff\\managercategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\admin\\manageraccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\admin\\manageraccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\admin\\manageraccount.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\admin\\manageraccount.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\hub\\apphub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\hub\\apphub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\home\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\home\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\services\\commentmemorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\commentmemorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|c:\\visualstudio\\assignment2\\dataaccess\\models\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\register\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\register\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|c:\\visualstudio\\assignment2\\dataaccess\\models\\newsarticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\newsarticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\staff\\managerarticle.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\staff\\managerarticle.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\register\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\register\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\pages\\staff\\managercategory.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\pages\\staff\\managercategory.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\services\\categoryservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\categoryservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\interface\\icategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\interface\\icategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\services\\systemaccountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\systemaccountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\interface\\isystemaccountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\interface\\isystemaccountrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\dto\\articledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\dto\\articledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\dto\\newsfilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\dto\\newsfilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\services\\tagservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\tagservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\services\\articleservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\services\\articleservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\interface\\iarticlerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\interface\\iarticlerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|c:\\visualstudio\\assignment2\\presentation\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DFFC7B3-D04E-4C48-A42A-EDD71C16120D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|c:\\visualstudio\\assignment2\\dataaccess\\models\\systemaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\systemaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|c:\\visualstudio\\assignment2\\dataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|c:\\visualstudio\\assignment2\\dataaccess\\dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{014C1250-ECB8-4BD7-AFEC-3AF7FB98FE82}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\businesslogic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\businesslogic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|c:\\visualstudio\\assignment2\\businesslogic\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3206BC44-B506-476D-B734-784CBEEE68DB}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 257,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:114700942:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CommentMemoryStore.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\CommentMemoryStore.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\CommentMemoryStore.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\CommentMemoryStore.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\CommentMemoryStore.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvxAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T10:14:18.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CommentDto.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\DataAccess\\Models\\CommentDto.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Models\\CommentDto.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\DataAccess\\Models\\CommentDto.cs",
+              "RelativeToolTip": "DataAccess\\Models\\CommentDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T10:13:32.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ManagerArticle.cshtml.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Staff\\ManagerArticle.cshtml.cs",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Staff\\ManagerArticle.cshtml.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Staff\\ManagerArticle.cshtml.cs",
+              "RelativeToolTip": "Presentation\\Pages\\Staff\\ManagerArticle.cshtml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA5wBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T06:46:01.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManagerArticle.cshtml",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Staff\\ManagerArticle.cshtml",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Staff\\ManagerArticle.cshtml",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Staff\\ManagerArticle.cshtml",
+              "RelativeToolTip": "Presentation\\Pages\\Staff\\ManagerArticle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T06:45:28.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ManagerCategory.cshtml.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Staff\\ManagerCategory.cshtml.cs",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Staff\\ManagerCategory.cshtml.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Staff\\ManagerCategory.cshtml.cs",
+              "RelativeToolTip": "Presentation\\Pages\\Staff\\ManagerCategory.cshtml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAqwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T19:20:24.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManagerCategory.cshtml",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Staff\\ManagerCategory.cshtml",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Staff\\ManagerCategory.cshtml",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Staff\\ManagerCategory.cshtml",
+              "RelativeToolTip": "Presentation\\Pages\\Staff\\ManagerCategory.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T19:19:29.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ManagerAccount.cshtml.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Admin\\ManagerAccount.cshtml.cs",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Admin\\ManagerAccount.cshtml.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Admin\\ManagerAccount.cshtml.cs",
+              "RelativeToolTip": "Presentation\\Pages\\Admin\\ManagerAccount.cshtml.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAswEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T16:35:25.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManagerAccount.cshtml",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Admin\\ManagerAccount.cshtml",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Admin\\ManagerAccount.cshtml",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Admin\\ManagerAccount.cshtml",
+              "RelativeToolTip": "Presentation\\Pages\\Admin\\ManagerAccount.cshtml",
+              "ViewState": "AgIAAFoBAAAAAAAAAAAqwGsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T16:34:59.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_navbar.cshtml",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Views\\Shared\\_navbar.cshtml",
+              "RelativeDocumentMoniker": "Presentation\\Views\\Shared\\_navbar.cshtml",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Views\\Shared\\_navbar.cshtml",
+              "RelativeToolTip": "Presentation\\Views\\Shared\\_navbar.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAgwDkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T16:16:12.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Register\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Register\\Login.cshtml.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Register\\Login.cshtml.cs",
+              "RelativeToolTip": "Presentation\\Pages\\Register\\Login.cshtml.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwDIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T10:28:04.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Home\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Home\\Index.cshtml.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Home\\Index.cshtml.cs",
+              "RelativeToolTip": "Presentation\\Pages\\Home\\Index.cshtml.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAtwF8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T10:20:02.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Home\\Index.cshtml",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Home\\Index.cshtml",
+              "RelativeToolTip": "Presentation\\Pages\\Home\\Index.cshtml",
+              "ViewState": "AgIAADMCAAAAAAAAAAApwHECAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T10:19:35.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Register\\Login.cshtml",
+              "RelativeDocumentMoniker": "Presentation\\Pages\\Register\\Login.cshtml",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Pages\\Register\\Login.cshtml",
+              "RelativeToolTip": "Presentation\\Pages\\Register\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T10:18:44.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NewsArticle.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\DataAccess\\Models\\NewsArticle.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Models\\NewsArticle.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\DataAccess\\Models\\NewsArticle.cs",
+              "RelativeToolTip": "DataAccess\\Models\\NewsArticle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:42:06.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ArticleDto.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\DTO\\ArticleDto.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\DTO\\ArticleDto.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\DTO\\ArticleDto.cs",
+              "RelativeToolTip": "BusinessLogic\\DTO\\ArticleDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:41:52.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "NewsFilterDto.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\DTO\\NewsFilterDto.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\DTO\\NewsFilterDto.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\DTO\\NewsFilterDto.cs",
+              "RelativeToolTip": "BusinessLogic\\DTO\\NewsFilterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:41:33.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TagServices.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\TagServices.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\TagServices.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\TagServices.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\TagServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:41:32.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SystemAccountServices.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\SystemAccountServices.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\SystemAccountServices.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\SystemAccountServices.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\SystemAccountServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:41:31.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CategoryServices.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\CategoryServices.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\CategoryServices.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\CategoryServices.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\CategoryServices.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:41:30.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ISystemAccountRepo.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Interface\\ISystemAccountRepo.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Interface\\ISystemAccountRepo.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Interface\\ISystemAccountRepo.cs",
+              "RelativeToolTip": "BusinessLogic\\Interface\\ISystemAccountRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:41:22.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ICategoryRepo.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Interface\\ICategoryRepo.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Interface\\ICategoryRepo.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Interface\\ICategoryRepo.cs",
+              "RelativeToolTip": "BusinessLogic\\Interface\\ICategoryRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:41:21.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IArticleRepo.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Interface\\IArticleRepo.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Interface\\IArticleRepo.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Interface\\IArticleRepo.cs",
+              "RelativeToolTip": "BusinessLogic\\Interface\\IArticleRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T04:41:19.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppHub.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Hub\\AppHub.cs",
+              "RelativeDocumentMoniker": "Presentation\\Hub\\AppHub.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Hub\\AppHub.cs",
+              "RelativeToolTip": "Presentation\\Hub\\AppHub.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T19:22:00.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SystemAccount.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\DataAccess\\Models\\SystemAccount.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Models\\SystemAccount.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\DataAccess\\Models\\SystemAccount.cs",
+              "RelativeToolTip": "DataAccess\\Models\\SystemAccount.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAApwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T18:15:50.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ArticleServices.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\ArticleServices.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Services\\ArticleServices.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Services\\ArticleServices.cs",
+              "RelativeToolTip": "BusinessLogic\\Services\\ArticleServices.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T18:05:40.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Presentation\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Presentation\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T18:04:03.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "Presentation\\Controllers\\StaffController.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Controllers\\StaffController.cs",
+              "RelativeToolTip": "Presentation\\Controllers\\StaffController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T18:01:33.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Presentation\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Presentation\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T18:01:18.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Controllers\\RegisterController.cs",
+              "RelativeDocumentMoniker": "Presentation\\Controllers\\RegisterController.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Controllers\\RegisterController.cs",
+              "RelativeToolTip": "Presentation\\Controllers\\RegisterController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T18:01:02.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Presentation.csproj",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Presentation.csproj",
+              "RelativeDocumentMoniker": "Presentation\\Presentation.csproj",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Presentation.csproj",
+              "RelativeToolTip": "Presentation\\Presentation.csproj",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwBwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-25T17:45:19.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\Program.cs",
+              "RelativeDocumentMoniker": "Presentation\\Program.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\Program.cs",
+              "RelativeToolTip": "Presentation\\Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAowCUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:43:37.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "BusinessLogic.csproj",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\BusinessLogic.csproj",
+              "RelativeDocumentMoniker": "BusinessLogic\\BusinessLogic.csproj",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\BusinessLogic.csproj",
+              "RelativeToolTip": "BusinessLogic\\BusinessLogic.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-25T17:41:45.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DataAccess.csproj",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\DataAccess\\DataAccess.csproj",
+              "RelativeDocumentMoniker": "DataAccess\\DataAccess.csproj",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\DataAccess\\DataAccess.csproj",
+              "RelativeToolTip": "DataAccess\\DataAccess.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-25T17:41:00.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\Presentation\\appsettings.json",
+              "RelativeDocumentMoniker": "Presentation\\appsettings.json",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\Presentation\\appsettings.json",
+              "RelativeToolTip": "Presentation\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-25T17:40:02.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Class1.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Class1.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\BusinessLogic\\Class1.cs",
+              "RelativeToolTip": "BusinessLogic\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:38:48.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\VisualStudio\\Assignment2\\DataAccess\\Class1.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Class1.cs",
+              "ToolTip": "C:\\VisualStudio\\Assignment2\\DataAccess\\Class1.cs",
+              "RelativeToolTip": "DataAccess\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T17:38:17.876Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

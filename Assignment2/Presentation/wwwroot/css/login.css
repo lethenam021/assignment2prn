@@ -1,0 +1,392 @@
+﻿/*
+  FUNews Login – Professional CSS
+  --------------------------------
+  Drop this into css/login.css and remove the inline <style> block
+  in your HTML. Classes map 1:1 to your current markup.
+*/
+
+/* 1) Base & Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+/* 2) Design Tokens */
+:root {
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --primary: #2563eb;
+    --primary-600: #1d4ed8;
+    --primary-700: #1e40af;
+    --border: #e5e7eb;
+    --ring: #93c5fd; /* subtle focus ring */
+    --error: #dc2626;
+    --success: #16a34a;
+    --radius: 8px; /* subtle, modern */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0b1220;
+        --card: #0f172a;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --primary: #60a5fa;
+        --primary-600: #3b82f6;
+        --primary-700: #2563eb;
+        --border: #1e293b;
+        --ring: #1d4ed8;
+        --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+        --shadow-md: 0 10px 24px rgba(0,0,0,0.45);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* 3) Layout */
+body {
+    background: radial-gradient(1200px 600px at 15% -10%, rgba(99,102,241,0.07), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(59,130,246,0.06), transparent 60%), var(--bg);
+    color: var(--text);
+    min-height: 100svh;
+    display: grid;
+    place-items: start center;
+}
+
+.container {
+    width: min(420px, 92vw);
+    margin: clamp(32px, 6vh, 72px) 16px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    overflow: clip;
+}
+
+.card-body {
+    padding: 28px 22px 26px;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 18px;
+}
+
+/* 4) Form */
+.field {
+    margin: 0 0 14px;
+}
+
+.label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 6px;
+}
+
+.input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+    /* Focus state (with fallback) */
+    .input:focus-within {
+        border-color: var(--primary-600);
+        background: #fff;
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 45%, transparent);
+    }
+
+/* Chrome/Firefox autofill */
+input:-webkit-autofill {
+    box-shadow: 0 0 0 30px #fff inset !important;
+    -webkit-text-fill-color: var(--text) !important;
+}
+
+.input input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 15px;
+    color: var(--text);
+    padding-right: 36px; /* room for eye icon */
+}
+
+input::placeholder {
+    color: color-mix(in srgb, var(--muted) 70%, transparent);
+}
+
+/* Password eye */
+.toggle-eye {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    translate: 0 -50%;
+    inline-size: 28px;
+    block-size: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .15s ease, transform .05s ease;
+}
+
+    .toggle-eye:hover {
+        background: color-mix(in srgb, var(--muted) 12%, transparent);
+    }
+
+    .toggle-eye:active {
+        transform: translateY(1px);
+    }
+
+/* Validation states */
+input:required:user-invalid {
+    outline: none;
+}
+
+input:invalid ~ .hint-error {
+    display: block;
+}
+
+.hint-error {
+    display: none;
+    color: var(--error);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* Actions row */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+}
+
+.link {
+    color: var(--primary-600);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .link:hover {
+        text-decoration: underline;
+    }
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    margin: 16px 0 8px;
+}
+
+    .divider::before, .divider::after {
+        content: "";
+        flex: 1;
+        block-size: 1px;
+        background: var(--border);
+    }
+
+/* Button */
+.btn {
+    width: 100%;
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    background: linear-gradient(180deg, var(--primary), var(--primary-600));
+    color: #fff;
+    font-weight: 650;
+    letter-spacing: .02em;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: filter .15s ease, transform .05s ease;
+}
+
+    .btn:hover {
+        filter: brightness(1.02);
+    }
+
+    .btn:active {
+        transform: translateY(1px);
+    }
+
+    .btn:disabled, .btn[aria-disabled="true"] {
+        opacity: .6;
+        cursor: not-allowed;
+    }
+
+    /* Button – loading state (toggle aria-busy on the button) */
+    .btn[aria-busy="true"] {
+        position: relative;
+        color: transparent;
+    }
+
+        .btn[aria-busy="true"]::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(180deg, var(--primary), var(--primary-600));
+            -webkit-mask: radial-gradient(circle 12px, #000 98%, transparent 101%);
+            mask: radial-gradient(circle 12px, #000 98%, transparent 101%);
+        }
+
+        .btn[aria-busy="true"]::before {
+            content: "";
+            position: absolute;
+            inset-inline-start: 50%;
+            inset-block-start: 50%;
+            translate: -50% -50%;
+            inline-size: 18px;
+            block-size: 18px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            border-right-color: transparent;
+            animation: spin .8s linear infinite;
+        }
+
+@keyframes spin {
+    to {
+        rotate: 360deg;
+    }
+}
+
+/* Alert */
+.alert {
+    display: none;
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    margin: 0 0 12px;
+    border: 1px solid transparent;
+}
+
+    .alert.show {
+        display: block;
+    }
+
+    .alert.success {
+        background: color-mix(in srgb, #22c55e 16%, transparent);
+        color: #166534;
+        border-color: #86efac;
+    }
+
+    .alert.error {
+        background: color-mix(in srgb, #ef4444 18%, transparent);
+        color: #991b1b;
+        border-color: #fecaca;
+    }
+
+/* Footer note */
+.foot {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 5) Accessibility & States */
+:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--ring) 65%, transparent);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* High contrast / forced colors */
+@media (forced-colors: active) {
+    .card {
+        border: 1px solid CanvasText;
+    }
+
+    .btn {
+        forced-color-adjust: auto;
+    }
+}
+
+/* 6) Small screens polish */
+@media (max-width: 360px) {
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+/* 7) Utility chips (if you bring header back) */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+
+    .chip .dot {
+        inline-size: 6px;
+        block-size: 6px;
+        background: var(--success);
+        border-radius: 50%;
+    }

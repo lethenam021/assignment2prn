@@ -1,0 +1,252 @@
+﻿/*
+  FUNews Navbar – Production CSS
+  --------------------------------
+  Paste this into ~/css/home.css (replace the old inline <style>). 
+  It keeps your current markup but makes the header a proper, modern navbar
+  without chunky buttons. Works with Bootstrap 5 dropdown JS already included.
+*/
+
+/* Reset-ish */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --nav-bg: #0f172a; /* slate-900 */
+    --nav-fg: #e5e7eb; /* gray-200 */
+    --nav-muted: #94a3b8; /* slate-400 */
+    --brand: #60a5fa; /* sky-400 */
+    --link: #cbd5e1; /* slate-300 */
+    --link-hover: #ffffff; /* white */
+    --divider: rgba(148,163,184,.28);
+    --ring: rgba(99,102,241,.35);
+    --radius: 10px;
+    --shadow-md: 0 8px 24px rgba(2,6,23,.24);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --nav-bg: #111827; /* gray-900 */
+        --nav-fg: #f3f4f6; /* gray-100 */
+        --nav-muted: #cbd5e1; /* slate-300 */
+        --brand: #2563eb; /* blue-600 */
+        --link: #e5e7eb; /* gray-200 */
+        --link-hover: #ffffff;
+        --divider: rgba(229,231,235,.18);
+        --ring: rgba(59,130,246,.35);
+    }
+}
+
+/* Page base */
+body {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: #f8f9fa;
+}
+
+/* Header/NavBar */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px;
+    color: var(--nav-fg);
+    background: color-mix(in srgb, var(--nav-bg) 92%, transparent);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset;
+}
+
+/* Brand (placed wherever you render it) */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--nav-fg);
+    text-decoration: none;
+}
+
+.logo-badge {
+    inline-size: 28px;
+    block-size: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+/* Role chip */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: var(--link-hover);
+    background: color-mix(in srgb, var(--brand) 22%, transparent);
+    border: 1px solid color-mix(in srgb, var(--brand) 38%, transparent);
+}
+
+/* Primary nav group (your .auth-buttons container acts as the right-aligned nav) */
+.auth-buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Convert the old button-looking anchors into sleek nav links */
+.btn-login, .btn-page, .btn-danger, .btn {
+    all: unset; /* remove Bootstrap button styles for these anchors */
+}
+
+/* Top-level nav link */
+.nav-link, .btn-login, .btn-page, .dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background .15s ease, color .15s ease, transform .05s ease;
+}
+
+    /* Replace Bootstrap caret with a subtle chevron */
+    .dropdown-toggle::after {
+        display: inline-block;
+        margin-left: .4rem;
+        vertical-align: .2em;
+        content: "▾";
+        border: 0;
+    }
+
+    .nav-link:hover, .btn-login:hover, .btn-page:hover, .dropdown-toggle:hover {
+        color: var(--link-hover);
+        background: rgba(255,255,255,.06);
+    }
+
+    .nav-link:active, .btn-login:active, .btn-page:active, .dropdown-toggle:active {
+        transform: translateY(1px);
+    }
+
+/* Logout as a quiet link, not a red button */
+.header-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fecaca;
+    text-decoration: none;
+}
+
+    .header-logout:hover {
+        color: #fff;
+        background: rgba(239,68,68,.18);
+    }
+
+/* Divider pipe between groups (optional utility) */
+.nav-divider {
+    inline-size: 1px;
+    block-size: 22px;
+    background: var(--divider);
+    margin: 0 6px;
+}
+
+/* Dropdown menu (Bootstrap) */
+.dropdown-menu {
+    --bs-dropdown-bg: color-mix(in srgb, var(--nav-bg) 96%, transparent);
+    --bs-dropdown-color: var(--nav-fg);
+    --bs-dropdown-link-color: var(--link);
+    --bs-dropdown-link-hover-color: var(--link-hover);
+    --bs-dropdown-link-hover-bg: rgba(255,255,255,.06);
+    --bs-dropdown-border-color: rgba(148,163,184,.22);
+    border-radius: var(--radius);
+    border: 1px solid var(--bs-dropdown-border-color);
+    box-shadow: var(--shadow-md);
+    padding: 6px;
+    min-width: 220px;
+    backdrop-filter: saturate(140%) blur(8px);
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-weight: 500;
+}
+
+    .dropdown-item.active, .dropdown-item:active {
+        background: rgba(255,255,255,.10);
+        color: var(--link-hover);
+    }
+
+.dropdown-menu .dropdown-header {
+    color: var(--nav-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.dropdown-divider {
+    height: 1px;
+    margin: .35rem .25rem;
+    background: var(--divider);
+    opacity: 1;
+}
+
+/* Badges inside menu */
+.dropdown-item .badge {
+    background: color-mix(in srgb, var(--brand) 22%, transparent);
+    color: var(--link-hover);
+    border: 1px solid color-mix(in srgb, var(--brand) 38%, transparent);
+}
+
+/* Keyboard focus */
+:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.dropdown-toggle:focus-visible, .nav-link:focus-visible, .btn-login:focus-visible, .btn-page:focus-visible, .header-logout:focus-visible {
+    box-shadow: 0 0 0 3px var(--ring);
+    border-radius: 10px;
+}
+
+/* Compact container width for the main area */
+.container {
+    max-width: 1100px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+}
+
+/* Optional: small screens wrap & allow scroll */
+@media (max-width: 520px) {
+    .site-header {
+        padding: 10px 14px;
+    }
+
+    .auth-buttons {
+        gap: 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+        .auth-buttons::-webkit-scrollbar {
+            display: none;
+        }
+}

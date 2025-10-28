@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Staff Dashboard – Layout</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <!-- Sidebar (menu tách riêng) -->
+    <aside class="sidebar">
+        <div class="brand"><div class="logo">ST</div>Staff Dashboard</div>
+        <div class="search">🔍<input id="menuSearch" placeholder="Tìm menu..." /></div>
+        <nav class="nav" id="nav">
+            <a href="#/category" data-tab="category" class="active">📂 Category</a>
+            <a href="#/news" data-tab="news">📰 News Article</a>
+            <a href="#/tag" data-tab="tag">🏷️ Tag</a>
+            <a href="#/link" data-tab="link">🔗 News–Tag Link</a>
+        </nav>
+        <div style="margin-top:auto" class="badge">Vai trò: <strong>Staff</strong></div>
+    </aside>
+
+    <!-- Vùng render trang con -->
+    <main id="app" role="main" aria-live="polite"></main>
+
+    <script src="assets/app.js" defer></script>
+</body>
+</html>
